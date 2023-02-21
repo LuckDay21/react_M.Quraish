@@ -1,0 +1,329 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product</title>
+  </head>
+  <body style="margin-left: 8px; margin-top: 19px">
+    <p
+      style="
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 192px;
+        height: 37px;
+        font-family: 'Times New Roman';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 37px;
+        display: flex;
+        align-items: center;
+        color: #000000;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      "
+    >
+      Create Product
+    </p>
+
+    <p
+      style="
+        margin-top: 6px;
+        margin-bottom: 0px;
+        width: 140px;
+        height: 28px;
+        font-family: 'Times New Roman';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        color: #000000;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      "
+    >
+      Detail Product
+    </p>
+
+    <form style="margin-top: 6px; margin-bottom: 0px">
+      <label
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          color: #000000;
+        "
+        for="product-name"
+        >Product name :</label
+      ><br />
+      <input
+        style="
+          margin-top: 4px;
+          box-sizing: border-box;
+          width: 159px;
+          height: 14px;
+          border: 0.5px solid #000000;
+          font-size: 12px;
+        "
+        type="text"
+        required
+        minlength="6"
+        maxlength="50"
+      />
+      <br /><br />
+      <label
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          color: #000000;
+        "
+        for="product-category"
+        >Product Category :</label
+      >
+      <br />
+      <select
+        style="
+          margin-top: 6px;
+          box-sizing: border-box;
+          position: absolute;
+          width: 71px;
+          height: 15px;
+          border: 0.5px solid #000000;
+          font-size: 12px;
+        "
+        name="category"
+        id="category"
+        required
+      >
+        <option hidden></option>
+        <option value="category-1">Category 1</option>
+        <option value="category-2">Category 2</option>
+        <option value="category-3">Category 3</option></select
+      ><br /><br />
+      <label
+        style="
+          width: 95px;
+          height: 14px;
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          display: flex;
+          align-items: center;
+          color: #000000;
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        "
+      >
+        Product Freshness :
+      </label>
+      <input
+        style="
+          box-sizing: border-box;
+          width: 9px;
+          height: 9px;
+          border: 0.5px solid #000000;
+        "
+        type="radio"
+        id="brand-new"
+        name="product-freshness"
+        value="Brand New"
+        required
+      />
+      <label
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        for="brand-new"
+        >Brand New</label
+      ><br />
+      <input
+        style="
+          box-sizing: border-box;
+          width: 9px;
+          height: 9px;
+          border: 0.5px solid #000000;
+        "
+        type="radio"
+        id="second-hank"
+        name="product-freshness"
+        value="Second Hank"
+      />
+      <label
+        style="
+          margin-top: 6px;
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        for="second-hank"
+        >Second Hank</label
+      ><br />
+      <input
+        style="
+          box-sizing: border-box;
+          width: 9px;
+          height: 9px;
+          border: 0.5px solid #000000;
+        "
+        type="radio"
+        id="refurbished"
+        name="product-freshness"
+        value="Refurbished"
+      />
+      <label
+        style="
+          margin-top: 6px;
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        for="refurbished"
+        >Refurbished</label
+      ><br />
+      <br />
+      <label
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        for="myfile"
+        >Image of Product</label
+      >
+      <input
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        type="file"
+        id="myfile"
+        name="myfile"
+        required
+      />
+      <br /><br />
+      <label
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        for="additional-description"
+        >Additional Description</label
+      ><br />
+      <textarea
+        style="
+          margin-top: 4px;
+          box-sizing: border-box;
+          width: 241px;
+          height: 99px;
+          border: 0.5px solid #000000;
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        name="additional-description"
+        id="additional-description"
+        required
+      ></textarea>
+      <br /><br />
+      <label
+        style="
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        for="product-price"
+        >Product price :</label
+      ><br />
+      <input
+        style="
+          margin-top: 4px;
+          box-sizing: border-box;
+          width: 55px;
+          height: 18px;
+          background: #ffffff;
+          border: 1px solid #000000;
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          text-align: center;
+          color: #000000;
+        "
+        type="number"
+        placeholder="$ 100"
+        required
+      /><br />
+      <input
+        style="
+          margin-top: 6px;
+          padding: 0;
+          box-sizing: border-box;
+          width: 55px;
+          height: 20px;
+          background: #d9d9d9;
+          border: 1px solid #000000;
+          font-family: 'Times New Roman';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          color: #000000;
+        "
+        type="submit"
+        value="Submit"
+      />
+    </form>
+  </body>
+</html>
