@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Simple header</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="btn btn-primary" href="landingPage.html" role="button"
+              >Home</a
+            >
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#">FAQs</a>
+            <a class="nav-link" href="#">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="mainP">
+      <div class="container">
+        <main>
+          <div class="py-5 text-center">
+            <img
+              class="d-block mx-auto mb-4"
+              src="assets/img/bootstrap-logo.svg.png"
+              alt=""
+              width="72"
+              height="57"
+            />
+            <h2>Create Product</h2>
+            <p class="lead">
+              Below is an example form built entirely with Bootstrap’s form
+              controls. Each required form group has a validation state that can
+              be triggered by attempting to submit the form without completing
+              it.
+            </p>
+          </div>
+
+          <div class="justify-content-center row g-5">
+            <div class="col-md-7 col-lg-8">
+              <h4 class="mb-3">Detail Product</h4>
+              <form class="was-validated" novalidate="">
+                <div class="row g-3">
+                  <div class="col-sm-6 has-validation">
+                    <label for="validationProductName" class="form-label"
+                      >Product name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="product-name"
+                      placeholder=""
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Valid Product Name is required.
+                    </div>
+                    <div class="valid-feedback">
+                      Valid Product Name.
+                    </div>
+                  </div>
+
+                  <div></div>
+
+                  <div class="col-md-5">
+                    <label for="productcategory" class="form-label"
+                      >Product Category</label
+                    >
+                    <select
+                      class="form-select"
+                      id="product-category"
+                      required=""
+                    >
+                      <option value="">Choose...</option>
+                      <option>Category 1</option>
+                      <option>Category 2</option>
+                      <option>Category 3</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid Product Category.
+                    </div>
+                  </div>
+
+                  <div></div>
+
+                  <div class="col-md-4 has-validation">
+                    <label for="imageproduct" class="form-label"
+                      >Image of Product</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image-product"
+                      required
+                    />
+                  </div>
+
+                  <div></div>
+
+                  <div class="my-3">
+                    <label for="validationProductFreshness" class="form-lab"
+                      >Product Freshness</label
+                    >
+                    <div class="form-check">
+                      <input
+                        id="product-freshness"
+                        name="productCondition"
+                        type="radio"
+                        class="form-check-input"
+                        required=""
+                      />
+                      <label class="form-check-label" for="new"
+                        >Brand New</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        id="product-freshness"
+                        name="productCondition"
+                        type="radio"
+                        class="form-check-input"
+                        required=""
+                      />
+                      <label class="form-check-label" for="second"
+                        >Second Hand</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        id="product-freshness"
+                        name="productCondition"
+                        type="radio"
+                        class="form-check-input"
+                        required=""
+                      />
+                      <label class="form-check-label" for="refurbished"
+                        >Refurbished</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="">
+                    <label for="decription" class="form-label"
+                      >Additional Description</label
+                    >
+                    <textarea
+                      id="additional-description"
+                      class="form-control col-12"
+                      aria-label="Additional Description"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div></div>
+
+                  <div class="col-12">
+                    <label for="validationProductPrice" class="form-label"
+                      >Product Price</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="product-price"
+                      placeholder="$ 1"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please enter a valid Product Price.
+                    </div>
+                  </div>
+
+                <button id="submit-button" class="w-100 btn btn-primary btn-lg" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <br />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    >
+    </script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
