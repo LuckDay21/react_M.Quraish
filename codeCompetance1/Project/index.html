@@ -783,6 +783,7 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <input
+                        id="fname"
                         class="form-control"
                         placeholder="First Name"
                         required=""
@@ -793,6 +794,7 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <input
+                        id="lname"
                         class="form-control"
                         placeholder="Last Name"
                         required=""
@@ -803,6 +805,7 @@
                   <div class="col-md-12">
                     <div class="mb-3">
                       <input
+                        id="email"
                         class="form-control"
                         placeholder="Email"
                         required=""
@@ -813,6 +816,7 @@
                   <div class="col-md-12">
                     <div class="mb-3">
                       <textarea
+                        id="message"
                         class="form-control"
                         placeholder="Message"
                         required=""
@@ -821,6 +825,7 @@
                     </div>
                   </div>
                   <button
+                    id="submit-button"
                     class="btn btn-warning btn-lg btn-block mt-3"
                     type="submit"
                   >
@@ -968,5 +973,26 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      var submitButton = document.getElementById("submit-button");
+
+      submitButton.addEventListener("click", function () {
+        var firstName = document.getElementById("fname").value;
+        var lastName = document.getElementById("lname").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        alert(
+          "First Name: " +
+            firstName +
+            "\nLast Name: " +
+            lastName +
+            "\nEmail: " +
+            email +
+            "\nMessage: " +
+            message
+        );
+      });
+    </script>
   </body>
 </html>
