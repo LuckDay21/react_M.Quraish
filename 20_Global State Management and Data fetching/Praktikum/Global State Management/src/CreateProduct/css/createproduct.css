@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap%22");
+@import url("https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600;700&display=swap");
+
+.navbar {
+  padding: 8.5px 34px 8.5px 0px;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  padding: 8px 4px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.navbar-nav {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.navbar-nav a {
+  padding: 12px 16px;
+}
+
+.nav-link {
+  color: #0d6efd;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: #0d6efd;
+  border-radius: 0.375rem;
+}
+
+.main {
+  background-color: #37517e;
+}
+
+.main h1 {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: #ffffff;
+}
+
+.main p {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff99;
+}
+
+.main button {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.main .btn-primary {
+  background: #47b2e4;
+  border-radius: 50px;
+}
+
+.main .btn-primary:hover {
+  background: #0d6efd;
+  border-radius: 50px;
+}
+
+.main .btn-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.main .btn-link:hover {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+.product h1 {
+  margin: 26px 0px 27px 13px;
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 28px;
+  color: #37517e;
+}
+
+.loadmore {
+  margin-top: 34px;
+  margin-bottom: 27px;
+}
+
+.subscribe {
+  background-color: #f3f5fa;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.subscribe h1 {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #37517e;
+}
+
+.subscribe h2 {
+  margin-top: 16px;
+  margin-bottom: 30px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  color: #444444;
+}
+
+.subscribe input {
+  background: #ffffff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 50px;
+}
+
+.subscribe button {
+  background: #47b2e4;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.section1 {
+  width: 330px;
+}
+
+.section1 h1 {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 28px;
+  color: #37517e;
+}
+
+.section1 p {
+  width: 190px;
+}
+
+.section2,
+.section3,
+.section4 {
+  width: 330px;
+}
+
+.section2 h1,
+.section3 h1,
+.section4 h1 {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #37517e;
+}
+
+.section2 a,
+.section3 a {
+  text-decoration: none;
+  padding-left: 22px;
+  padding-bottom: 24px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #777777;
+}
+
+.section4 img {
+  cursor: pointer;
+}
+
+.copyright {
+  margin: 0;
+  background-color: #37517e;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+.w-100 {
+  margin-top: 100px;
+}
+
+.displayProducts {
+  margin-top: 20px;
+}
+
+.displayProducts div {
+  width: auto;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
