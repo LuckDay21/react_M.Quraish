@@ -20,7 +20,7 @@ import { createClient } from "graphql-ws";
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: "ws://knowing-orca-77.hasura.app/v1/graphql",
+    url: "wss://knowing-orca-77.hasura.app/v1/graphql",
     connectionParams: {
       headers: {
         "x-hasura-admin-secret":
