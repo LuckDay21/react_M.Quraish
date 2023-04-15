@@ -1,4 +1,4 @@
-# (27) Introduction GraphQL and Apoll Client Setup
+# (27) GraphQL Query and Mutation
 
 ## 1. Query
 
