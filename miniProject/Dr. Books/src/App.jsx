@@ -2,7 +2,7 @@ import React from "react";
 import NavbarComponent from "./components/NavbarComponent";
 import { Col, Container, Row } from "react-bootstrap";
 import ListCategories from "./components/ListCategories";
-import Cart from "./components/Cart";
+import Keranjang from "./components/Keranjang";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
               </h4>
               <hr />
             </Col>
-            <Cart />
+            <Keranjang />
           </Row>
         </Container>
       </div>
