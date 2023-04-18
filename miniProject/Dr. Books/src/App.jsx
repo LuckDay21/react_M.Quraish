@@ -1,56 +1,21 @@
 import React from "react";
-import NavbarComponent from "./components/NavbarComponent";
-import { Col, Container, Row } from "react-bootstrap";
-import ListCategories from "./components/ListCategories";
-import Keranjang from "./components/Keranjang";
-import { gql, useQuery } from "@apollo/client";
-import Books from "./components/Books";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Fiksi from "./pages/Fiksi";
+import NonFiksi from "./pages/NonFiksi";
+import Komik from "./pages/Komik";
 
-function App() {
-  const Get_Book = gql`
-    query Get_Book {
-      List_Book {
-        id
-        bookCategories
-        bookName
-        bookPrice
-        bookImage
-        bookDescription
-        bookWriter
-      }
-    }
-  `;
-
-  const {
-    loading: loadingGetBook,
-    error: errorGetBook,
-    data: dataGetBook,
-  } = useQuery(Get_Book);
-
+export default function App() {
   return (
-    <div className="App">
-      <NavbarComponent />
-      <div className="mt-3">
-        <Container fluid>
-          <Row>
-            <ListCategories />
-            <Col>
-              <h4>
-                <strong>Daftar Buku</strong>
-              </h4>
-              <hr />
-              <Row>
-                {dataGetBook?.List_Book.map((book) => (
-                  <Books key={book.id} book={book} />
-                ))}
-              </Row>
-            </Col>
-            <Keranjang />
-          </Row>
-        </Container>
-      </div>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Fiksi" element={<Fiksi />} />
+          <Route path="/Non-Fiksi" element={<NonFiksi />} />
+          <Route path="/Komik" element={<Komik />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
-
-export default App;
