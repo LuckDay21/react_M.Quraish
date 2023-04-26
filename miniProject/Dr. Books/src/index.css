@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Public Sans", sans-serif;
+}
+
+.navbar {
+  background-color: blueviolet;
+}
+
+.btn-primary {
+  background-color: blueviolet;
+}
+
+.category-active {
+  background-color: blueviolet;
+  color: white;
+}
