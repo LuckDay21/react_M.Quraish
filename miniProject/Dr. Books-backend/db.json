@@ -269,8 +269,8 @@
   ],
   "carts": [
     {
-      "jumlah": 1,
-      "total_harga": 129000,
+      "jumlah": 2,
+      "total_harga": 258000,
       "product": {
         "id": 1,
         "kode": "F-01",
