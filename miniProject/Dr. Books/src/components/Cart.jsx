@@ -4,6 +4,9 @@ import { Badge, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import TotalPayment from "./TotalPayment";
 import CartModal from "./CartModal";
+import axios from "axios";
+import { API_URL } from "../utils/constants";
+import swal from "sweetalert";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -14,6 +17,7 @@ export default class Cart extends Component {
       cartDetail: false,
       jumlah: 0,
       keterangan: "",
+      totalHarga: 0,
     };
   }
 
@@ -23,6 +27,7 @@ export default class Cart extends Component {
       cartDetail: cartMenu,
       jumlah: cartMenu.jumlah,
       keterangan: cartMenu.keterangan,
+      totalHarga: cartMenu.total_harga,
     });
   };
 
@@ -35,6 +40,7 @@ export default class Cart extends Component {
   tambah = () => {
     this.setState({
       jumlah: this.state.jumlah + 1,
+      totalHarga: this.state.cartDetail.product.harga * (this.state.jumlah + 1),
     });
   };
 
@@ -42,6 +48,8 @@ export default class Cart extends Component {
     if (this.state.jumlah !== 1) {
       this.setState({
         jumlah: this.state.jumlah - 1,
+        totalHarga:
+          this.state.cartDetail.product.harga * (this.state.jumlah - 1),
       });
     }
   };
@@ -54,6 +62,42 @@ export default class Cart extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.handleClose();
+    const data = {
+      jumlah: this.state.jumlah,
+      total_harga: this.state.totalHarga,
+      product: this.state.cartDetail.product,
+      keterangan: this.state.keterangan,
+    };
+    axios
+      .put(API_URL + "carts/" + this.state.cartDetail.id, data)
+      .then((res) => {
+        swal({
+          title: "Update!",
+          text: "Buku Terupdate",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  hapusPesanan = (id) => {
+    this.handleClose();
+
+    axios
+      .delete(API_URL + "carts/" + id)
+      .then((res) => {
+        swal({
+          title: "Delete!",
+          text: "Buku Terhapus" + this.state.cartDetail.product.nama,
+          icon: "error",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
@@ -99,6 +143,7 @@ export default class Cart extends Component {
               kurang={this.kurang}
               changeHandler={this.changeHandler}
               handleSubmit={this.handleSubmit}
+              hapusPesanan={this.hapusPesanan}
             />
           </ListGroup>
         )}

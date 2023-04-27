@@ -13,6 +13,8 @@ const CartModal = ({
   kurang,
   changeHandler,
   handleSubmit,
+  totalHarga,
+  hapusPesanan,
 }) => {
   if (cartDetail) {
     return (
@@ -28,7 +30,7 @@ const CartModal = ({
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga :</Form.Label>
               <p>
-                <strong>Rp. {numberWithCommas(cartDetail.total_harga)}</strong>
+                <strong>Rp. {numberWithCommas(totalHarga)}</strong>
               </p>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
@@ -38,18 +40,18 @@ const CartModal = ({
                 variant="primary"
                 size="sm"
                 className="me-2"
-                onClick={() => tambah()}
+                onClick={() => kurang()}
               >
-                <FontAwesomeIcon icon={faPlus} />
+                <FontAwesomeIcon icon={faMinus} />
               </Button>
               <strong>{jumlah}</strong>
               <Button
                 variant="primary"
                 size="sm"
                 className="ms-2"
-                onClick={() => kurang()}
+                onClick={() => tambah()}
               >
-                <FontAwesomeIcon icon={faMinus} />
+                <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -69,7 +71,7 @@ const CartModal = ({
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger">
+          <Button variant="danger" onClick={() => hapusPesanan(cartDetail.id)}>
             <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
           </Button>
         </Modal.Footer>
