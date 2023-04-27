@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { Button, Col, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +16,7 @@ export default function TotalPayment(props) {
       total_payment: totalPayment,
       books: props.carts,
     };
+
     axios.post(API_URL + "orders", order).then((res) => {
       navigate("/success");
     });

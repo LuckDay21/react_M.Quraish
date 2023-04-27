@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import ListCategories from "../components/ListCategories";
@@ -28,6 +29,24 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
+    this.getCartList();
+  }
+
+  // componentDidUpdate(prevState) {
+  //   if (this.state.carts !== prevState.carts) {
+  //     axios
+  //       .get(API_URL + "carts")
+  //       .then((res) => {
+  //         const carts = res.data;
+  //         this.setState({ carts });
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }
+  // }
+
+  getCartList = () => {
     axios
       .get(API_URL + "carts")
       .then((res) => {
@@ -37,27 +56,14 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
-  }
-
-  componentDidUpdate(prevState) {
-    if (this.state.carts !== prevState.carts) {
-      axios
-        .get(API_URL + "carts")
-        .then((res) => {
-          const carts = res.data;
-          this.setState({ carts });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }
+  };
 
   changeCategory = (value) => {
     this.setState({
       selectCategory: value,
       books: [],
     });
+
     axios
       .get(API_URL + "products?category.nama=" + value)
       .then((res) => {
@@ -79,9 +85,11 @@ export default class Home extends Component {
             total_harga: value.harga,
             product: value,
           };
+
           axios
             .post(API_URL + "carts", cart)
             .then((res) => {
+              this.getCartList();
               swal({
                 title: "Success!",
                 text: "Buku Masuk Keranjang",
@@ -97,6 +105,7 @@ export default class Home extends Component {
             total_harga: res.data[0].total_harga + value.harga,
             product: value,
           };
+
           axios
             .put(API_URL + "carts/" + res.data[0].id, cart)
             .then((res) => {
@@ -143,7 +152,11 @@ export default class Home extends Component {
                   ))}
               </Row>
             </Col>
-            <Cart carts={carts} {...this.props} />
+            <Cart
+              carts={carts}
+              {...this.props}
+              getCartList={this.getCartList}
+            />
           </Row>
         </Container>
       </div>

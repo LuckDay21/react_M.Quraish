@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Component } from "react";
-import { Badge, Col, ListGroup, Row } from "react-bootstrap";
+import { Badge, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import TotalPayment from "./TotalPayment";
 import CartModal from "./CartModal";
@@ -63,15 +64,18 @@ export default class Cart extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.handleClose();
+
     const data = {
       jumlah: this.state.jumlah,
       total_harga: this.state.totalHarga,
       product: this.state.cartDetail.product,
       keterangan: this.state.keterangan,
     };
+
     axios
       .put(API_URL + "carts/" + this.state.cartDetail.id, data)
       .then((res) => {
+        this.props.getCartList();
         swal({
           title: "Update!",
           text: "Buku Terupdate",
@@ -89,6 +93,7 @@ export default class Cart extends Component {
     axios
       .delete(API_URL + "carts/" + id)
       .then((res) => {
+        this.props.getCartList();
         swal({
           title: "Delete!",
           text: "Buku Terhapus" + this.state.cartDetail.product.nama,
@@ -110,43 +115,47 @@ export default class Cart extends Component {
         </h4>
         <hr />
         {carts.length !== 0 && (
-          <ListGroup variant="flush">
-            {carts.map((cartMenu) => (
-              <ListGroup.Item
-                key={cartMenu.id}
-                onClick={() => this.handleShow(cartMenu)}
-              >
-                <Row>
-                  <Col xs={2}>
-                    <h4>
-                      <Badge pill bg="success">
-                        {cartMenu.jumlah}
-                      </Badge>
-                    </h4>
-                  </Col>
-                  <Col>
-                    <h5>{cartMenu.product.nama}</h5>
-                    <p>Rp. {numberWithCommas(cartMenu.product.harga)}</p>
-                  </Col>
-                  <Col>
-                    <strong className="float-end">
-                      Rp. {numberWithCommas(cartMenu.total_harga)}
-                    </strong>
-                  </Col>
-                </Row>
-              </ListGroup.Item>
-            ))}
-            <CartModal
-              handleClose={this.handleClose}
-              {...this.state}
-              tambah={this.tambah}
-              kurang={this.kurang}
-              changeHandler={this.changeHandler}
-              handleSubmit={this.handleSubmit}
-              hapusPesanan={this.hapusPesanan}
-            />
-          </ListGroup>
+          <Card className="overflow-auto hasil">
+            <ListGroup variant="flush">
+              {carts.map((cartMenu) => (
+                <ListGroup.Item
+                  key={cartMenu.id}
+                  onClick={() => this.handleShow(cartMenu)}
+                >
+                  <Row>
+                    <Col xs={2}>
+                      <h4>
+                        <Badge pill bg="success">
+                          {cartMenu.jumlah}
+                        </Badge>
+                      </h4>
+                    </Col>
+                    <Col>
+                      <h5>{cartMenu.product.nama}</h5>
+                      <p>Rp. {numberWithCommas(cartMenu.product.harga)}</p>
+                    </Col>
+                    <Col>
+                      <strong className="float-end">
+                        Rp. {numberWithCommas(cartMenu.total_harga)}
+                      </strong>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              ))}
+
+              <CartModal
+                handleClose={this.handleClose}
+                {...this.state}
+                tambah={this.tambah}
+                kurang={this.kurang}
+                changeHandler={this.changeHandler}
+                handleSubmit={this.handleSubmit}
+                hapusPesanan={this.hapusPesanan}
+              />
+            </ListGroup>
+          </Card>
         )}
+
         <TotalPayment carts={carts} {...this.props} />
       </Col>
     );

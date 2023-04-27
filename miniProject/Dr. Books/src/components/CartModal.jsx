@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button, Form, Modal } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,6 +34,7 @@ const CartModal = ({
                 <strong>Rp. {numberWithCommas(totalHarga)}</strong>
               </p>
             </Form.Group>
+
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Jumlah :</Form.Label>
               <br />
@@ -44,7 +46,9 @@ const CartModal = ({
               >
                 <FontAwesomeIcon icon={faMinus} />
               </Button>
+
               <strong>{jumlah}</strong>
+
               <Button
                 variant="primary"
                 size="sm"
@@ -54,6 +58,7 @@ const CartModal = ({
                 <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
+
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Keterangan :</Form.Label>
               <Form.Control
