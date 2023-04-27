@@ -6,7 +6,7 @@ const NavbarComponent = () => {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand>
+        <Navbar.Brand href={window.location.href}>
           <img
             alt=""
             src={logo}

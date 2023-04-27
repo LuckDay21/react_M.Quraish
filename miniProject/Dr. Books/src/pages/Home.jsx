@@ -14,14 +14,19 @@ export default class Home extends Component {
 
     this.state = {
       books: [],
-      selectCategory: "Fiksi",
+      selectCategory: "All Books",
       carts: [],
     };
   }
 
   componentDidMount() {
+    this.getAllBooks();
+    this.getCartList();
+  }
+
+  getAllBooks = () => {
     axios
-      .get(API_URL + "products?category.nama=" + this.state.selectCategory)
+      .get(API_URL + "products")
       .then((res) => {
         const books = res.data;
         this.setState({ books });
@@ -29,22 +34,19 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
-    this.getCartList();
-  }
+  };
 
-  // componentDidUpdate(prevState) {
-  //   if (this.state.carts !== prevState.carts) {
-  //     axios
-  //       .get(API_URL + "carts")
-  //       .then((res) => {
-  //         const carts = res.data;
-  //         this.setState({ carts });
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  // }
+  getBooksByCategory = (category) => {
+    axios
+      .get(API_URL + "products?category.nama=" + category)
+      .then((res) => {
+        const books = res.data;
+        this.setState({ books, selectCategory: category });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   getCartList = () => {
     axios
@@ -59,20 +61,7 @@ export default class Home extends Component {
   };
 
   changeCategory = (value) => {
-    this.setState({
-      selectCategory: value,
-      books: [],
-    });
-
-    axios
-      .get(API_URL + "products?category.nama=" + value)
-      .then((res) => {
-        const books = res.data;
-        this.setState({ books });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.getBooksByCategory(value);
   };
 
   insertCart = (value) => {

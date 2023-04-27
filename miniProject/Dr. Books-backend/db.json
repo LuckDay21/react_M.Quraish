@@ -267,47 +267,7 @@
       }
     }
   ],
-  "carts": [
-    {
-      "jumlah": 2,
-      "total_harga": 258000,
-      "product": {
-        "id": 1,
-        "kode": "F-01",
-        "nama": "Dune: Bagian 1",
-        "harga": 129000,
-        "is_ready": true,
-        "gambar": "https://cdn.gramedia.com/uploads/picture_meta/2023/3/26/ih86gbr4urzmibs3ah49hq.jpg",
-        "deskripsi": "Di planet Arrakis, kisah seorang pemuda bernama Paul Atreides bermula. Ayah Paul ditunjuk oleh Imperium sebagai penguasa di planet gurun tersebut yang juga dikenal dengan nama Dune itu. Meski bukan merupakan tempat yang nyaman untuk tinggal, Arrakis punya rempah berharga yang diperebutkan di seluruh jagat raya. Maka ketika Klan Atreides dikhianati, kehancuran keluarganya membuat Paul harus menempuh perjalanan menjemput takdir menuju padang pasir.",
-        "penulis": "Frank Herbert",
-        "category": {
-          "id": 1,
-          "nama": "Fiksi"
-        }
-      },
-      "keterangan": "Versi Bahasa Inggris",
-      "id": 1
-    },
-    {
-      "jumlah": 1,
-      "total_harga": 189000,
-      "product": {
-        "id": 2,
-        "kode": "F-02",
-        "nama": "Sang Dewi Api (The Burning God)",
-        "harga": 189000,
-        "is_ready": true,
-        "gambar": "https://cdn.gramedia.com/uploads/picture_meta/2023/1/24/kuhe9qigbybry8wwmjavyn.jpg",
-        "deskripsi": "Lanjutan Perang Opium dan Republik Naga Akhir luar biasa trilogi The Poppy War. Setelah berhasil menyelamatkan negara Nikan dalam perang saudara yang brutal, Fang Runin malah dikhianati para sekutu. Dengan aliansi baru, Rin menyusun kekuatan. Bagai terlahir kembali dari abu, sang Phoenix pun menemukan lagi kekuatan dalam kemurkaan dan pembalasan dendam rakyat selatan. Mereka menghabisi pihak Naga, orang-orang Hesperia, dan semua yang berusaha melenyapkan syamanisme. Namun, seiring meningkatnya kekuatan dan pengaruh Rin, apakah ia akan cukup kuat untuk melawan suara Phoenix yang mendesaknya membumihanguskan dunia?",
-        "penulis": "R.F. Kuang",
-        "category": {
-          "id": 1,
-          "nama": "Fiksi"
-        }
-      },
-      "id": 2
-    }
-  ],
+  "carts": [],
   "orders": [
     {
       "total_payment": 592000,
@@ -371,6 +331,50 @@
         }
       ],
       "id": 1
+    },
+    {
+      "total_payment": 318000,
+      "books": [
+        {
+          "jumlah": 1,
+          "total_harga": 129000,
+          "product": {
+            "id": 1,
+            "kode": "F-01",
+            "nama": "Dune: Bagian 1",
+            "harga": 129000,
+            "is_ready": true,
+            "gambar": "https://cdn.gramedia.com/uploads/picture_meta/2023/3/26/ih86gbr4urzmibs3ah49hq.jpg",
+            "deskripsi": "Di planet Arrakis, kisah seorang pemuda bernama Paul Atreides bermula. Ayah Paul ditunjuk oleh Imperium sebagai penguasa di planet gurun tersebut yang juga dikenal dengan nama Dune itu. Meski bukan merupakan tempat yang nyaman untuk tinggal, Arrakis punya rempah berharga yang diperebutkan di seluruh jagat raya. Maka ketika Klan Atreides dikhianati, kehancuran keluarganya membuat Paul harus menempuh perjalanan menjemput takdir menuju padang pasir.",
+            "penulis": "Frank Herbert",
+            "category": {
+              "id": 1,
+              "nama": "Fiksi"
+            }
+          },
+          "id": 1
+        },
+        {
+          "jumlah": 1,
+          "total_harga": 189000,
+          "product": {
+            "id": 2,
+            "kode": "F-02",
+            "nama": "Sang Dewi Api (The Burning God)",
+            "harga": 189000,
+            "is_ready": true,
+            "gambar": "https://cdn.gramedia.com/uploads/picture_meta/2023/1/24/kuhe9qigbybry8wwmjavyn.jpg",
+            "deskripsi": "Lanjutan Perang Opium dan Republik Naga Akhir luar biasa trilogi The Poppy War. Setelah berhasil menyelamatkan negara Nikan dalam perang saudara yang brutal, Fang Runin malah dikhianati para sekutu. Dengan aliansi baru, Rin menyusun kekuatan. Bagai terlahir kembali dari abu, sang Phoenix pun menemukan lagi kekuatan dalam kemurkaan dan pembalasan dendam rakyat selatan. Mereka menghabisi pihak Naga, orang-orang Hesperia, dan semua yang berusaha melenyapkan syamanisme. Namun, seiring meningkatnya kekuatan dan pengaruh Rin, apakah ia akan cukup kuat untuk melawan suara Phoenix yang mendesaknya membumihanguskan dunia?",
+            "penulis": "R.F. Kuang",
+            "category": {
+              "id": 1,
+              "nama": "Fiksi"
+            }
+          },
+          "id": 2
+        }
+      ],
+      "id": 2
     }
   ]
 }

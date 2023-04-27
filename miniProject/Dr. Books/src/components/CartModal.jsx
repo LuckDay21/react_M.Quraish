@@ -27,6 +27,20 @@ const CartModal = ({
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <img
+            src={cartDetail.product.gambar}
+            alt={cartDetail.product.nama}
+            style={{
+              width: "50%",
+              marginBottom: "1rem",
+              display: "block",
+              margin: "auto",
+            }}
+          />
+          <br />
+          <p>
+            <i>{cartDetail.product.deskripsi}</i>
+          </p>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga :</Form.Label>
@@ -58,6 +72,7 @@ const CartModal = ({
                 <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
+            <br />
 
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Keterangan :</Form.Label>
