@@ -375,6 +375,31 @@
         }
       ],
       "id": 2
+    },
+    {
+      "total_payment": 129000,
+      "books": [
+        {
+          "jumlah": 1,
+          "total_harga": 129000,
+          "product": {
+            "id": 1,
+            "kode": "F-01",
+            "nama": "Dune: Bagian 1",
+            "harga": 129000,
+            "is_ready": true,
+            "gambar": "https://cdn.gramedia.com/uploads/picture_meta/2023/3/26/ih86gbr4urzmibs3ah49hq.jpg",
+            "deskripsi": "Di planet Arrakis, kisah seorang pemuda bernama Paul Atreides bermula. Ayah Paul ditunjuk oleh Imperium sebagai penguasa di planet gurun tersebut yang juga dikenal dengan nama Dune itu. Meski bukan merupakan tempat yang nyaman untuk tinggal, Arrakis punya rempah berharga yang diperebutkan di seluruh jagat raya. Maka ketika Klan Atreides dikhianati, kehancuran keluarganya membuat Paul harus menempuh perjalanan menjemput takdir menuju padang pasir.",
+            "penulis": "Frank Herbert",
+            "category": {
+              "id": 1,
+              "nama": "Fiksi"
+            }
+          },
+          "id": 1
+        }
+      ],
+      "id": 3
     }
   ]
 }

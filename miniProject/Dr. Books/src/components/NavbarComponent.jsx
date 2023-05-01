@@ -1,6 +1,6 @@
+import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../img/Dr. Books.png";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 const NavbarComponent = () => {
   return (
@@ -16,6 +16,13 @@ const NavbarComponent = () => {
           />{" "}
           <strong>Dr. Books</strong>
         </Navbar.Brand>
+        <Navbar.Collapse className="justify-content-end">
+          <Nav>
+            <Nav.Link as={Link} to="/faq">
+              <strong>FAQ</strong>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
