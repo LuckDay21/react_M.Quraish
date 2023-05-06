@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import { Button, Form, Modal } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 const CartModal = ({
   showModal,
@@ -115,6 +115,32 @@ const CartModal = ({
       </Modal>
     );
   }
+};
+
+CartModal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  cartDetail: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    product: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      nama: PropTypes.string.isRequired,
+      harga: PropTypes.number.isRequired,
+      deskripsi: PropTypes.string.isRequired,
+      gambar: PropTypes.string.isRequired,
+    }).isRequired,
+    jumlah: PropTypes.number.isRequired,
+    keterangan: PropTypes.string.isRequired,
+    total_harga: PropTypes.number.isRequired,
+  }),
+  jumlah: PropTypes.number.isRequired,
+  keterangan: PropTypes.string.isRequired,
+  tambah: PropTypes.func.isRequired,
+  kurang: PropTypes.func.isRequired,
+  changeHandler: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  totalHarga: PropTypes.number.isRequired,
+  hapusPesanan: PropTypes.func.isRequired,
 };
 
 export default CartModal;

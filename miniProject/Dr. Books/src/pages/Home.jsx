@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import ListCategories from "../components/ListCategories";
@@ -16,6 +15,7 @@ export default class Home extends Component {
       books: [],
       selectCategory: "All Books",
       carts: [],
+      searchQuery: "",
     };
   }
 
@@ -37,8 +37,15 @@ export default class Home extends Component {
   };
 
   getBooksByCategory = (category) => {
+    const { searchQuery } = this.state;
+
+    let url = API_URL + "products?category.nama=" + category;
+    if (searchQuery !== "") {
+      url += "&nama_contains=" + searchQuery;
+    }
+
     axios
-      .get(API_URL + "products?category.nama=" + category)
+      .get(url)
       .then((res) => {
         const books = res.data;
         this.setState({ books, selectCategory: category });
@@ -114,6 +121,34 @@ export default class Home extends Component {
       });
   };
 
+  handleSearch = (query) => {
+    this.setState({ searchQuery: query });
+  };
+
+  handleSearchSubmit = () => {
+    const { selectCategory, searchQuery } = this.state;
+
+    if (searchQuery !== "") {
+      axios
+        .get(
+          API_URL +
+            "products?nama=" +
+            searchQuery +
+            "&category.nama=" +
+            selectCategory
+        )
+        .then((res) => {
+          const books = res.data;
+          this.setState({ books });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      this.getBooksByCategory(selectCategory);
+    }
+  };
+
   render() {
     const { books, selectCategory, carts } = this.state;
 
@@ -124,6 +159,9 @@ export default class Home extends Component {
             <ListCategories
               changeCategory={this.changeCategory}
               selectCategory={selectCategory}
+              searchQuery={this.searchQuery}
+              handleSearch={this.handleSearch}
+              handleSearchSubmit={this.handleSearchSubmit}
             />
             <Col>
               <h4>

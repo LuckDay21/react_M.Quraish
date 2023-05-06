@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
 import { Card, Col } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
+import PropTypes from "prop-types";
 
 const Books = ({ book, insertCart }) => {
   return (
-    <Col md={4} xs={6} className="mb-4">
+    <Col md={3} xs={6} className="mb-4">
       <Card className="shadow" onClick={() => insertCart(book)}>
         <Card.Img variant="top" src={book.gambar} />
         <Card.Body>
@@ -17,6 +17,16 @@ const Books = ({ book, insertCart }) => {
       </Card>
     </Col>
   );
+};
+
+Books.propTypes = {
+  book: PropTypes.shape({
+    gambar: PropTypes.string.isRequired,
+    nama: PropTypes.string.isRequired,
+    penulis: PropTypes.string.isRequired,
+    harga: PropTypes.number.isRequired,
+  }).isRequired,
+  insertCart: PropTypes.func.isRequired,
 };
 
 export default Books;

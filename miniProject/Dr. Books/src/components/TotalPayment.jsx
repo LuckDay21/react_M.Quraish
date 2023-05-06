@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { Button, Col, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,22 +5,23 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { API_URL } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function TotalPayment(props) {
+const TotalPayment = ({ carts }) => {
   const navigate = useNavigate();
 
   const submitTotalPayment = (totalPayment) => {
     const order = {
       total_payment: totalPayment,
-      books: props.carts,
+      books: carts,
     };
 
-    axios.post(API_URL + "orders", order).then((res) => {
+    axios.post(API_URL + "orders", order).then(() => {
       navigate("/success");
     });
   };
 
-  const totalPayment = props.carts.reduce(function (result, item) {
+  const totalPayment = carts.reduce(function (result, item) {
     return result + item.total_harga;
   }, 0);
 
@@ -51,4 +50,19 @@ export default function TotalPayment(props) {
       </Row>
     </div>
   );
-}
+};
+
+TotalPayment.propTypes = {
+  carts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      nama: PropTypes.string.isRequired,
+      cover: PropTypes.string.isRequired,
+      harga: PropTypes.number.isRequired,
+      jumlah: PropTypes.number.isRequired,
+      total_harga: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
+
+export default TotalPayment;
