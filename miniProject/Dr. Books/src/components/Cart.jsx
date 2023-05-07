@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { Component } from "react";
 import { Badge, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
@@ -8,6 +6,7 @@ import CartModal from "./CartModal";
 import axios from "axios";
 import { API_URL } from "../utils/constants";
 import swal from "sweetalert";
+import PropTypes from "prop-types";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -74,7 +73,7 @@ export default class Cart extends Component {
 
     axios
       .put(API_URL + "carts/" + this.state.cartDetail.id, data)
-      .then((res) => {
+      .then(() => {
         this.props.getCartList();
         swal({
           title: "Update!",
@@ -92,7 +91,7 @@ export default class Cart extends Component {
 
     axios
       .delete(API_URL + "carts/" + id)
-      .then((res) => {
+      .then(() => {
         this.props.getCartList();
         swal({
           title: "Delete!",
@@ -140,6 +139,13 @@ export default class Cart extends Component {
                       </strong>
                     </Col>
                   </Row>
+                  <Row>
+                    <Col>
+                      <strong>Keterangan:</strong>
+                      <br />
+                      <small>{cartMenu.keterangan}</small>
+                    </Col>
+                  </Row>
                 </ListGroup.Item>
               ))}
 
@@ -156,8 +162,23 @@ export default class Cart extends Component {
           </Card>
         )}
 
+        {carts.length === 0 && (
+          <div className="d-flex justify-content-center hasil">
+            <h5 className="text-muted">Keranjang Kosong</h5>
+          </div>
+        )}
+
         <TotalPayment carts={carts} {...this.props} />
       </Col>
     );
   }
 }
+
+Cart.propTypes = {
+  carts: PropTypes.array.isRequired,
+  getCartList: PropTypes.func.isRequired,
+};
+
+TotalPayment.propTypes = {
+  carts: PropTypes.array.isRequired,
+};

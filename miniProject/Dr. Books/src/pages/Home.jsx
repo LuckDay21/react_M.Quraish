@@ -84,7 +84,7 @@ export default class Home extends Component {
 
           axios
             .post(API_URL + "carts", cart)
-            .then((res) => {
+            .then(() => {
               this.getCartList();
               swal({
                 title: "Success!",
@@ -104,7 +104,7 @@ export default class Home extends Component {
 
           axios
             .put(API_URL + "carts/" + res.data[0].id, cart)
-            .then((res) => {
+            .then(() => {
               swal({
                 title: "Success!",
                 text: "Buku Masuk Keranjang",
@@ -159,7 +159,7 @@ export default class Home extends Component {
             <ListCategories
               changeCategory={this.changeCategory}
               selectCategory={selectCategory}
-              searchQuery={this.searchQuery}
+              searchQuery={this.state.searchQuery}
               handleSearch={this.handleSearch}
               handleSearchSubmit={this.handleSearchSubmit}
             />

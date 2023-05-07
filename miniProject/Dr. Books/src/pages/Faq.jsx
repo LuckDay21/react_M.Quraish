@@ -30,7 +30,7 @@ const Success = () => {
                   Bagaimana cara mencari buku?
                 </Accordion.Header>
                 <Accordion.Body>
-                  1. Klik icon Search
+                  1. Klik icon `Search`
                   <br />
                   2. Pilih genre buku
                   <br />
@@ -38,6 +38,15 @@ const Success = () => {
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="2">
+                <Accordion.Header>
+                  Bagaimana cara menampilkan kembali semua buku setelah memilih
+                  kategori?
+                </Accordion.Header>
+                <Accordion.Body>
+                  Klik logo `Dr. Books` pada navbar
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="3">
                 <Accordion.Header>
                   Pembayaran apa yang bisa digunakan?
                 </Accordion.Header>
