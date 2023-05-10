@@ -16,9 +16,13 @@ const TotalPayment = ({ carts }) => {
       books: carts,
     };
 
-    axios.post(API_URL + "orders", order).then(() => {
-      navigate("/success");
-    });
+    axios
+      .post(API_URL + "orders", order)
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+        navigate("/success");
+      });
   };
 
   const totalPayment = carts.reduce(function (result, item) {

@@ -24,6 +24,18 @@ export default class Home extends Component {
     this.getCartList();
   }
 
+  componentDidUpdate() {
+    this.getCartList();
+  }
+
+  success() {
+    swal({
+      title: "Success!",
+      text: "Buku Masuk Keranjang",
+      icon: "success",
+    });
+  }
+
   getAllBooks = () => {
     axios
       .get(API_URL + "products")
@@ -86,14 +98,15 @@ export default class Home extends Component {
             .post(API_URL + "carts", cart)
             .then(() => {
               this.getCartList();
+              console.log(swal);
+            })
+            .catch((error) => {
+              console.log(error);
               swal({
                 title: "Success!",
                 text: "Buku Masuk Keranjang",
                 icon: "success",
               });
-            })
-            .catch((error) => {
-              console.log(error);
             });
         } else {
           const cart = {
@@ -104,15 +117,14 @@ export default class Home extends Component {
 
           axios
             .put(API_URL + "carts/" + res.data[0].id, cart)
-            .then(() => {
+            .then(() => {})
+            .catch((error) => {
+              console.log(error);
               swal({
                 title: "Success!",
                 text: "Buku Masuk Keranjang",
                 icon: "success",
               });
-            })
-            .catch((error) => {
-              console.log(error);
             });
         }
       })

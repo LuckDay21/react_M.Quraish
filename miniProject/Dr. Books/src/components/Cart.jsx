@@ -75,14 +75,14 @@ export default class Cart extends Component {
       .put(API_URL + "carts/" + this.state.cartDetail.id, data)
       .then(() => {
         this.props.getCartList();
+      })
+      .catch((error) => {
+        console.log(error);
         swal({
           title: "Update!",
           text: "Buku Terupdate",
           icon: "success",
         });
-      })
-      .catch((error) => {
-        console.log(error);
       });
   };
 
@@ -93,14 +93,14 @@ export default class Cart extends Component {
       .delete(API_URL + "carts/" + id)
       .then(() => {
         this.props.getCartList();
+      })
+      .catch((error) => {
+        console.log(error);
         swal({
           title: "Delete!",
           text: "Buku Terhapus" + this.state.cartDetail.product.nama,
           icon: "error",
         });
-      })
-      .catch((error) => {
-        console.log(error);
       });
   };
 
